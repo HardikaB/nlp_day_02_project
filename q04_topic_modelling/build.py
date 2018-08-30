@@ -12,9 +12,9 @@ def q04_topic_modelling(path,n_top_words=20):
     v3=q03_LDA(path)
     message=list()
     for topic_idx, topic in enumerate(v3):
-        message =[v2[i] for i in topic.argsort()[:-n_top_words - 1:-1]]
+        topic='Topic '+str(topic_idx) +': '+' '.join([v2[i] for i in topic.argsort()[:-n_top_words :-1]])
+        message.append(topic)
     return message
-
 
     
 
